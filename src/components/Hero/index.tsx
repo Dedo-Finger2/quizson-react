@@ -1,4 +1,5 @@
-import ImportBtn from "../ImportBtn";
+import { FaFileImport } from "react-icons/fa";
+import Button from "../Button";
 import heroBackground from "./../../assets/hero-background.jpg";
 
 function Hero() {
@@ -21,7 +22,14 @@ function Hero() {
             to import your quizzes and test your knowledge
           </p>
         </div>
-        <ImportBtn />
+        <Button
+          content="Import"
+          size="big"
+          bgColor="bg-orange-400"
+          bgColorHover="hover:bg-orange-500"
+          textColor="text-orange-800"
+          icon={<FaFileImport />}
+        />
       </div>
       <div className="relative w-max before:absolute before:left-0 before:right-0 before:top-0 before:z-1 before:h-full before:w-full before:bg-gradient-to-t before:from-stone-900 before:to-transparent">
         <img

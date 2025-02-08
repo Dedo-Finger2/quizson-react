@@ -1,5 +1,6 @@
 import { MdQuiz } from "react-icons/md";
-import ImportBtn from "../ImportBtn";
+import Button from "../Button";
+import { FaFileImport } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -23,7 +24,14 @@ function Navbar() {
             About
           </span>
         </div>
-        <ImportBtn />
+        <Button
+          content="Import"
+          size="default"
+          bgColor="bg-orange-400"
+          bgColorHover="hover:bg-orange-500"
+          textColor="text-orange-800"
+          icon={<FaFileImport />}
+        />
       </div>
     </div>
   );
