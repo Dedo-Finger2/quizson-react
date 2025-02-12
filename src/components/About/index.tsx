@@ -15,10 +15,10 @@ function About() {
           About
         </h1>
         <span className="text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          omnis velit et commodi doloribus quia, quaerat soluta voluptatem
-          doloremque in aut veritatis explicabo animi! Error, repellat quaerat!
-          Necessitatibus, est ea!
+          Quizson is designed to be both flexible and powerful, making it easy
+          for you to engage with quizzes and enhance your learning. Start
+          quizzing yourself today and take the first step toward improving your
+          knowledge with Quizson!
         </span>
         <Button
           content={"Contact Me"}
