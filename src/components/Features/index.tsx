@@ -11,11 +11,6 @@ function Features() {
         <h1 className="text-3xl font-bold" id="Features">
           Features
         </h1>
-        <span className="text-sm">
-          This platform is designed to be flexible yet powerful, allowing you to
-          easily play your quizzes with ease. You can start improving your
-          learning by quizzing yourself right now with Quizzson!
-        </span>
       </div>
       <div className="grid grid-cols-4 gap-6">
         <FeatureCard
