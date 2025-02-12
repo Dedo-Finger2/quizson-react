@@ -1,5 +1,6 @@
 import { LuFileJson2 } from "react-icons/lu";
 import { HiMiniPencilSquare } from "react-icons/hi2";
+import { LuImport } from "react-icons/lu";
 import UploadFileSection from "../components/UploadFile";
 import Navbar from "../components/Navbar";
 
@@ -9,10 +10,14 @@ function UploadFilePage() {
       <Navbar />
       <div className="flex flex-col items-center justify-center h-full">
         <div className="flex flex-col gap-6 text-orange-50">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl font-bold">Import a quiz</h1>
+          <div className="flex flex-col gap-2 w-100">
+            <h1 className="text-3xl font-bold flex gap-2 items-center">
+              <LuImport />
+              Import a quiz
+            </h1>
             <span className="text-sm text-neutral-400">
-              Lorem ipsum dolor sit, amet consectetur adipisicing
+              Import your quiz by uploading a .json file, or paste the json code
+              and start your quiz right way!
             </span>
           </div>
 
