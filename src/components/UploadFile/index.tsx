@@ -15,7 +15,7 @@ function UploadFileSection() {
         </p>
       </div>
       <label>
-        <input type="file" className="z-10" hidden />
+        <input type="file" className="z-10" accept=".json" hidden />
         <div className="shadow-sm cursor-pointer bg-orange-400 hover:bg-orange-500 flex gap-2 items-center justify-center rounded-md py-1 font-semibold">
           Choose a file
         </div>
