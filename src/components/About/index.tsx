@@ -4,9 +4,9 @@ import { MdEmail } from "react-icons/md";
 
 function About() {
   return (
-    <div className="text-white flex gap-12 w-full">
+    <div className="text-white flex flex-col gap-12 w-full">
       <img
-        className="size-80 rounded-2xl shadow-lg"
+        className="size-80 w-full h-auto rounded-2xl shadow-lg"
         src={svg}
         alt="girl-looking-to-giant-question-mark"
       />
