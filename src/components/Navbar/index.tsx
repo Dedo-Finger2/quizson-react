@@ -14,7 +14,7 @@ function Navbar() {
       </div>
       <div className="flex gap-12 items-center">
         <div className="flex gap-8">
-          <span className="transition-colors ease-in-out font-semibold text-orange-400 cursor-pointer">
+          <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
             Home
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
