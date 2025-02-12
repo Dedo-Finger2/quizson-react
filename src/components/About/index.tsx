@@ -11,7 +11,9 @@ function About() {
         alt="girl-looking-to-giant-question-mark"
       />
       <div className="flex flex-col gap-4">
-        <h1 className="text-3xl font-bold">About</h1>
+        <h1 className="text-3xl font-bold" id="About">
+          About
+        </h1>
         <span className="text-sm">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
           omnis velit et commodi doloribus quia, quaerat soluta voluptatem

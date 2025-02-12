@@ -8,7 +8,9 @@ function Features() {
   return (
     <div className="text-white flex flex-col gap-6">
       <div className="flex flex-col gap-6">
-        <h1 className="text-3xl font-bold">Features</h1>
+        <h1 className="text-3xl font-bold" id="Features">
+          Features
+        </h1>
         <span className="text-sm">
           This platform is designed to be flexible yet powerful, allowing you to
           easily play your quizzes with ease. You can start improving your
