@@ -1,5 +1,4 @@
 import { MdQuiz } from "react-icons/md";
-import Button from "../Button";
 import { FaFileImport } from "react-icons/fa";
 import { Link } from "react-router";
 
@@ -28,14 +27,13 @@ function Navbar() {
             <a href="#About">About</a>
           </span>
         </div>
-        <Button
-          content="Import"
-          size="default"
-          bgColor="bg-orange-400"
-          bgColorHover="hover:bg-orange-500"
-          textColor="text-orange-800"
-          icon={<FaFileImport />}
-        />
+        <Link
+          className="bg-orange-400 text-md px-5 py-1.5 transition-colors ease-in-out font-bold flex items-center gap-2 rounded-md hover:cursor-pointer text-orange-800 hover:bg-orange-500"
+          to="/upload-file"
+        >
+          <FaFileImport />
+          Import
+        </Link>
       </div>
     </div>
   );
