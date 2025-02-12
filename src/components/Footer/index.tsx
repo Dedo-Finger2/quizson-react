@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 function Footer() {
   return (
     <div className="w-full items-center text-orange-100/70 flex flex-col gap-8">
-      <span>@A. Neto - antonioimportant@gmail.com</span>
+      <span>A. Neto - antonioimportant@gmail.com</span>
       <div className="flex gap-4">
         <CiLinkedin
           className="transition-colors ease-in-out hover:text-orange-400 hover:cursor-pointer"
