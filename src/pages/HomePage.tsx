@@ -6,7 +6,7 @@ import About from "./../components/About";
 import Footer from "./../components/Footer";
 import JSONFormat from "../components/JSONFormat";
 
-function App() {
+function HomePage() {
   return (
     <div className="mb-12">
       <Navbar />
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
