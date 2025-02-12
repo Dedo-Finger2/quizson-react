@@ -1,7 +1,7 @@
 import { LuFileJson2 } from "react-icons/lu";
 import { HiMiniPencilSquare } from "react-icons/hi2";
-import UploadFileSection from "./components/UploadFile";
-import Navbar from "./components/Navbar";
+import UploadFileSection from "../components/UploadFile";
+import Navbar from "../components/Navbar";
 
 function UploadFilePage() {
   return (
