@@ -21,6 +21,9 @@ function Navbar() {
             <a href="#Features">Features</a>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
+            <a href="#Features">JSON Format</a>
+          </span>
+          <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
             <a href="#About">About</a>
           </span>
         </div>
