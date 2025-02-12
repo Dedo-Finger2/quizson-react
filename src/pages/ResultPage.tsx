@@ -5,10 +5,33 @@ import ProgressBar from "../components/Quiz/ProgressBar";
 import { FaCheck } from "react-icons/fa6";
 import { TbConfetti } from "react-icons/tb";
 
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
+
 function ResultPage() {
+  const { width, height } = useWindowSize();
+
   return (
     <div className="h-screen w-screen">
       <Navbar />
+      <Confetti
+        width={width}
+        height={height}
+        gravity={0.15}
+        colors={[
+          "#FFA500",
+          "#FF7F32",
+          "#FF6A13",
+          "#FF8C00",
+          "#FF4500",
+          "#FD7E14",
+          "#F57C00",
+          "#FF9F00",
+          "#FFB84D",
+        ]}
+        recycle={false}
+        numberOfPieces={400}
+      />
       <div className="text-orange-50 flex flex-col gap-16 items-center mt-16">
         {/* Header */}
         <div className="flex flex-col gap-4 items-center">
@@ -17,7 +40,7 @@ function ResultPage() {
             <h1>
               You got <span>10</span> of <span>10</span> right!
             </h1>
-            <TbConfetti size={36} />
+            <TbConfetti id="rewardId" size={36} />
           </div>
           <span className="text-sm">
             Lorem ipsum dolor sit amet consectetur.
