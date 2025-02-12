@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Alternative from "../components/Quiz/Alternative";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
+import ProgressBar from "../components/Quiz/ProgressBar";
 
 function QuizPage() {
   return (
@@ -10,19 +11,15 @@ function QuizPage() {
       <div className="flex flex-col items-center mt-16">
         <div className="text-orange-50 flex flex-col gap-8 h-full w-250">
           {/* Header */}
-          <div className="flex flex-col gap-4 justify-center select-none">
-            <span className="font-semibold text-lg">Question 1/6</span>
-            <div className="relative">
-              <div
-                style={{ width: "20%" }}
-                className="transition-all ease-in-out h-2 rounded-full bg-orange-400 absolute"
-              ></div>
-              <div className="w-full h-2 rounded-full bg-orange-300/30"></div>
-            </div>
-            <span className="text-sm text-orange-100/80">
-              <span>04:00</span> left
-            </span>
-          </div>
+          <ProgressBar
+            title={"Question 1/6"}
+            percentage={10}
+            description={
+              <span className="text-sm text-orange-100/80">
+                <span>04:00</span> left
+              </span>
+            }
+          />
           {/* Question */}
           <div className="flex gap-4 select-none">
             <div className="p-4 bg-orange-300/20 rounded-xl flex items-center justify-center">
