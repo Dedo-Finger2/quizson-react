@@ -16,16 +16,16 @@ function Navbar() {
       <div className="flex gap-12 items-center">
         <div className="flex gap-8">
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <Link to="/"></Link>
+            <Link to="/">Home</Link>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <Link to="/#Features">Features</Link>
+            <a href="#Features">Features</a>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <Link to="/#JSONFormat">JSON Format</Link>
+            <a href="#JSONFormat">JSON Format</a>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <Link to="/#About">About</Link>
+            <a href="#About">About</a>
           </span>
         </div>
         <Button
