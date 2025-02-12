@@ -1,6 +1,7 @@
 import { MdQuiz } from "react-icons/md";
 import Button from "../Button";
 import { FaFileImport } from "react-icons/fa";
+import { Link } from "react-router";
 
 function Navbar() {
   return (
@@ -15,16 +16,16 @@ function Navbar() {
       <div className="flex gap-12 items-center">
         <div className="flex gap-8">
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            Home
+            <Link to="/"></Link>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <a href="#Features">Features</a>
+            <Link to="/#Features">Features</Link>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <a href="#Features">JSON Format</a>
+            <Link to="/#JSONFormat">JSON Format</Link>
           </span>
           <span className="transition-colors ease-in-out font-semibold cursor-pointer hover:text-orange-400">
-            <a href="#About">About</a>
+            <Link to="/#About">About</Link>
           </span>
         </div>
         <Button
