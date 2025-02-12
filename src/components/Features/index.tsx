@@ -12,7 +12,7 @@ function Features() {
           Features
         </h1>
       </div>
-      <div className="grid grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 gap-6 w-full">
         <FeatureCard
           title="Import from JSON"
           description="Import quizzes using our supported JSON format"
