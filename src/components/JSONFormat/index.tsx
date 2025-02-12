@@ -5,8 +5,49 @@ import { MdOutlineTextFields } from "react-icons/md";
 import { GoGoal } from "react-icons/go";
 import { FaCheck } from "react-icons/fa6";
 import { FaLayerGroup } from "react-icons/fa6";
+import { FaCopy } from "react-icons/fa6";
+import { useState } from "react";
+
+const jsonFormat = {
+  questions: [
+    {
+      title: "",
+      topic: "",
+      correctAnswerIndex: 0,
+      alternatives: [
+        {
+          text: "",
+        },
+        {
+          text: "",
+        },
+        {
+          text: "",
+        },
+        {
+          text: "",
+        },
+        {
+          text: "",
+        },
+      ],
+    },
+  ],
+};
 
 function JSONFormat() {
+  const [copyJsonFormatButtonContent, setCopyJsonFormatButtonContent] =
+    useState("Copy to clipboard");
+
+  function copyJsonFormatToClipboard() {
+    const stringfyJsonFormat = JSON.stringify(jsonFormat);
+    setCopyJsonFormatButtonContent("Copied!");
+    navigator.clipboard.writeText(stringfyJsonFormat);
+    setTimeout(() => {
+      setCopyJsonFormatButtonContent("Copy to clipboard");
+    }, 2000);
+  }
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-orange-50 font-bold text-3xl" id="JSONFormat">
@@ -14,8 +55,17 @@ function JSONFormat() {
       </h1>
       <div className="flex gap-12 text-orange-50">
         {/* Code Image */}
-        <div className="bg-orange-400/10 border border-orange-400 p-4 flex items-center justify-center rounded-xl">
-          <img className="" src={JSONFormatImage} alt="code-example" />
+        <div className="flex flex-col gap-2">
+          <div className="bg-orange-400/10 border border-orange-400 p-4 flex items-center justify-center rounded-xl">
+            <img className="" src={JSONFormatImage} alt="code-example" />
+          </div>
+          <button
+            onClick={copyJsonFormatToClipboard}
+            className="flex items-center justify-center gap-2 bg-orange-400 p-2 rounded-lg hover:bg-orange-500 hover:cursor-pointer font-bold"
+          >
+            <FaCopy />
+            {copyJsonFormatButtonContent}
+          </button>
         </div>
         {/* About the format */}
         <div className="flex flex-col gap-8 justify-center">
