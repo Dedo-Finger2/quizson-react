@@ -1,6 +1,6 @@
 type ProgressBarProps = {
   title: string;
-  description?: string;
+  description?: string | React.ReactNode;
   percentage: number;
 };
 
