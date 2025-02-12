@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <div className="mb-12">
       <Navbar />
-      <div className="xl:200 lg:px-140 md:px-20 items-center justify-center flex flex-col gap-12">
+      <div className="items-center justify-center flex flex-col gap-12">
         <Hero />
         <Features />
         <JSONFormat />

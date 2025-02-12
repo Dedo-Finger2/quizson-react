@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 
 function About() {
   return (
-    <div className="text-white flex gap-12">
+    <div className="text-white flex gap-12 w-full">
       <img
         className="size-80 rounded-2xl shadow-lg"
         src={svg}

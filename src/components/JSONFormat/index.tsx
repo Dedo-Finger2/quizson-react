@@ -49,7 +49,7 @@ function JSONFormat() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 w-full">
       <h1 className="text-orange-50 font-bold text-3xl" id="JSONFormat">
         JSON Format
       </h1>

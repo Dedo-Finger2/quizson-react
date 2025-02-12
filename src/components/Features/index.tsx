@@ -6,7 +6,7 @@ import FeatureCard from "../FeatureCard";
 
 function Features() {
   return (
-    <div className="text-white flex flex-col gap-6">
+    <div className="text-white flex flex-col gap-6 w-full">
       <div className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold" id="Features">
           Features
