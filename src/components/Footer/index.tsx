@@ -15,6 +15,9 @@ function Footer() {
           <a href="#Features">Features</a>
         </span>
         <span>
+          <a href="#JsonFormat">JSON Format</a>
+        </span>
+        <span>
           <a href="#About">About</a>
         </span>
       </div>
