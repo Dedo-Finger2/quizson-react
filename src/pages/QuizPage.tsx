@@ -8,8 +8,8 @@ function QuizPage() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-col items-center mt-16">
-        <div className="text-orange-50 flex flex-col gap-8 h-full w-250">
+      <div className="flex flex-col">
+        <div className="text-orange-50 flex flex-col gap-8 h-full w-full">
           {/* Header */}
           <ProgressBar
             title={"Question 1/6"}
