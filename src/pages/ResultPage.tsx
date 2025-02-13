@@ -2,14 +2,56 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Result/Card";
 import ProgressBar from "../components/Quiz/ProgressBar";
 
-import { FaCheck } from "react-icons/fa6";
+import { FaCheck, FaXmark } from "react-icons/fa6";
 import { TbConfetti } from "react-icons/tb";
 
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
+
+type UserAnswer = {
+  questionNumber: number;
+  questionText: string;
+  userGuessNumber: number;
+  userGuessText: string;
+  correctGuessNumber: number;
+  correctGuessText: string;
+};
 
 function ResultPage() {
   const { width, height } = useWindowSize();
+
+  const userAnswers = useRef<UserAnswer[]>([]);
+  const [userCorrectGuesses, setUserCorrectGuesses] = useState(0);
+  const [totalQuestions, setTotalQuestions] = useState(0);
+  const [progressBarPercentage, setProgressBarPercentage] = useState(0);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const sessionStorageUserAnswers = sessionStorage.getItem("userAnswers");
+
+    if (!sessionStorageUserAnswers) {
+      navigate("/");
+      return;
+    }
+
+    const jsonData: UserAnswer[] = JSON.parse(sessionStorageUserAnswers);
+
+    userAnswers.current = jsonData;
+
+    setTotalQuestions(userAnswers.current.length);
+
+    for (const result of userAnswers.current) {
+      if (result.userGuessNumber === result.correctGuessNumber)
+        setUserCorrectGuesses((prev) => (prev += 1));
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    setProgressBarPercentage((userCorrectGuesses / totalQuestions) * 100);
+  }, [totalQuestions, userCorrectGuesses]);
 
   return (
     <div className="h-screen w-screen">
@@ -38,7 +80,8 @@ function ResultPage() {
           <div className="flex gap-6 font-bold text-xl text-center">
             <TbConfetti size={26} style={{ transform: "scaleX(-1)" }} />
             <h1>
-              You got <span>10</span> of <span>10</span> right!
+              You got <span>{userCorrectGuesses}</span> of{" "}
+              <span>{totalQuestions}</span> right!
             </h1>
             <TbConfetti id="rewardId" size={26} />
           </div>
@@ -50,49 +93,30 @@ function ResultPage() {
           {/* Question bar */}
           <div className="w-full">
             <ProgressBar
-              title={"07/10 Questions"}
-              percentage={70}
-              description="70%"
+              title={`${userCorrectGuesses}/${totalQuestions} Questions`}
+              percentage={progressBarPercentage}
+              description={`${progressBarPercentage}%`}
             />
           </div>
           {/* Questions results */}
           <div className="grid grid-cols-1 gap-8">
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
-            <Card
-              icon={<FaCheck size={20} />}
-              title={"1. What is 2 + 2?"}
-              userAnswer={"1. Alternativa 01"}
-              correctAnswer={"2. Alternativa 02"}
-            />
+            {userAnswers.current
+              ? userAnswers.current.map((answer, index) => (
+                  <Card
+                    key={index}
+                    icon={
+                      answer.correctGuessNumber === answer.userGuessNumber ? (
+                        <FaCheck size={20} />
+                      ) : (
+                        <FaXmark size={20} />
+                      )
+                    }
+                    title={`${answer.questionNumber}. ${answer.questionText}`}
+                    correctAnswer={`${answer.correctGuessNumber}. ${answer.correctGuessText}`}
+                    userAnswer={`${answer.userGuessNumber}. ${answer.userGuessText}`}
+                  />
+                ))
+              : "Loading..."}
           </div>
         </div>
       </div>
