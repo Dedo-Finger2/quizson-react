@@ -6,19 +6,19 @@ import Navbar from "../components/Navbar";
 
 function UploadFilePage() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen w-screen">
       <Navbar />
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center h-full w-full px-6">
         <div className="flex flex-col gap-6 text-orange-50">
-          <div className="flex flex-col gap-2 w-100">
-            <h1 className="text-3xl font-bold flex gap-2 items-center">
-              <LuImport />
+          <div className="flex flex-col gap-2 w-full">
+            <h1 className="text-2xl font-bold flex flex-col gap-2 items-center">
+              <LuImport size={38} />
               Import a quiz
             </h1>
-            <span className="text-sm text-neutral-400">
+            <p className="text-sm text-neutral-400 w-full text-center">
               Import your quiz by uploading a .json file, or paste the json code
               and start your quiz right way!
-            </span>
+            </p>
           </div>
 
           <div className="flex text-center gap-4 justify-between">
