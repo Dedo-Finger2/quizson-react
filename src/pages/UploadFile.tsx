@@ -8,7 +8,7 @@ function UploadFilePage() {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex flex-col">
         <div className="flex flex-col gap-6 text-orange-50">
           <div className="flex flex-col gap-2 w-100">
             <h1 className="text-3xl font-bold flex gap-2 items-center">
