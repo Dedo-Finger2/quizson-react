@@ -8,14 +8,14 @@ function UploadFilePage() {
   return (
     <div className="flex flex-col h-screen w-screen">
       <Navbar />
-      <div className="flex flex-col justify-center h-full w-full px-6">
+      <div className="flex flex-col justify-center h-full w-full px-6 sm:px-24">
         <div className="flex flex-col gap-6 text-orange-50">
           <div className="flex flex-col gap-2 w-full">
-            <h1 className="text-2xl font-bold flex flex-col gap-2 items-center">
+            <h1 className="text-2xl font-bold flex flex-col gap-2 items-center sm:items-start">
               <LuImport size={38} />
               Import a quiz
             </h1>
-            <p className="text-sm text-neutral-400 w-full text-center">
+            <p className="text-sm text-neutral-400 w-full text-center sm:text-start">
               Import your quiz by uploading a .json file, or paste the json code
               and start your quiz right way!
             </p>
