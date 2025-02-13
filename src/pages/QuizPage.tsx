@@ -7,10 +7,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { JSONFormat } from "../api/functions/read-json-file";
 
+type UserAnswer = {
+  questionId: number;
+  userGuessIndex: number;
+  correctGuessIndex: number;
+};
+
 function QuizPage() {
   const [quizData, setQuizData] = useState<JSONFormat>({ questions: [] });
   const [quizProgressPercentage, setQuizProgressPercentage] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [userAnswers, setUserAnswers] = useState<UserAnswer>();
 
   const navigate = useNavigate();
 
@@ -63,25 +70,31 @@ function QuizPage() {
             </div>
             <div className="flex flex-col gap-0.5">
               <h1 className="font-bold text-base/relaxed">
-                {quizData.questions[currentQuestionIndex].title}
+                {quizData.questions[currentQuestionIndex]
+                  ? quizData.questions[currentQuestionIndex].title
+                  : "Loading..."}
               </h1>
               <span className="font-medium text-sm text-orange-100/80">
                 {currentQuestionIndex + 1}.{" "}
-                {quizData.questions[currentQuestionIndex].topic}
+                {quizData.questions[currentQuestionIndex]
+                  ? quizData.questions[currentQuestionIndex].topic
+                  : "Loading..."}
               </span>
             </div>
           </div>
           {/* Alternatives */}
           <div className="grid grid-cols-1 gap-4">
-            {quizData.questions[currentQuestionIndex].alternatives.map(
-              (alternative, index) => (
-                <Alternative
-                  content={alternative.text}
-                  id={index}
-                  key={index}
-                />
-              )
-            )}
+            {quizData.questions[currentQuestionIndex]
+              ? quizData.questions[currentQuestionIndex].alternatives.map(
+                  (alternative, index) => (
+                    <Alternative
+                      content={alternative.text}
+                      id={index}
+                      key={index}
+                    />
+                  )
+                )
+              : "Loading..."}
           </div>
           {/* Question controls */}
           <div className="flex justify-between select-none">
