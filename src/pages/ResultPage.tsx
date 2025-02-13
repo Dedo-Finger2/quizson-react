@@ -75,10 +75,10 @@ function ResultPage() {
         recycle={false}
         numberOfPieces={400}
       />
-      <div className="text-orange-50 flex flex-col w-full px-6 mt-12 gap-12 pb-12 sm:px-20">
+      <div className="text-orange-50 flex flex-col w-full px-6 mt-12 gap-12 pb-12 sm:px-20 md:px-32">
         {/* Header */}
         <div className="flex flex-col gap-4 items-center">
-          <div className="flex gap-6 font-bold text-xl text-center sm:text-2xl">
+          <div className="flex gap-6 font-bold text-xl text-center sm:text-2xl md:text-3xl">
             <TbConfetti size={26} style={{ transform: "scaleX(-1)" }} />
             <h1>
               You got <span>{userCorrectGuesses}</span> of{" "}
@@ -86,7 +86,7 @@ function ResultPage() {
             </h1>
             <TbConfetti id="rewardId" size={26} />
           </div>
-          <span className="text-sm text-center text-orange-100/80">
+          <span className="text-sm text-center text-orange-100/80 md:text-base">
             Lorem ipsum dolor sit amet consectetur.
           </span>
         </div>

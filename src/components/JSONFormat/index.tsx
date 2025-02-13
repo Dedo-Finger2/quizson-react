@@ -50,7 +50,10 @@ function JSONFormat() {
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      <h1 className="text-orange-50 font-bold text-2xl" id="JSONFormat">
+      <h1
+        className="text-orange-50 font-bold text-2xl md:text-3xl"
+        id="JSONFormat"
+      >
         JSON Format
       </h1>
       <div className="flex flex-col gap-12 text-orange-50 sm:flex-row">

@@ -7,14 +7,14 @@ function Hero() {
     <div className="relative w-full flex items-center justify-center mt-8">
       <div className="flex flex-col gap-6 items-center text-white absolute z-2">
         <div className="flex flex-col gap-3 items-center">
-          <h1 className="font-semibold text-xl text-center sm:text-3xl">
+          <h1 className="font-semibold text-xl text-center sm:text-3xl md:text-4xl">
             Import your{" "}
             <span className="font-bold underline underline-offset-4 text-orange-300">
               quizzes
             </span>{" "}
             in seconds
           </h1>
-          <p className="text-xs text-stone-100 text-center sm:text-sm">
+          <p className="text-xs text-stone-100 text-center sm:text-sm md:text-base">
             Use{" "}
             <span className="font-bold underline underline-offset-4 text-orange-300">
               JSON
