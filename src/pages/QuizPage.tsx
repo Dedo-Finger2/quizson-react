@@ -3,14 +3,37 @@ import Alternative from "../components/Quiz/Alternative";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import ProgressBar from "../components/Quiz/ProgressBar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { JSONFormat } from "../api/functions/read-json-file";
 
 function QuizPage() {
+  const [quizData, setQuizData] = useState<JSONFormat>({ questions: [] });
+  const [quizProgressPercentage, setQuizProgressPercentage] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
+    const data = sessionStorage.getItem("quizData");
+
+    if (!data) {
+      navigate("/upload-file");
+      return;
+    }
+
+    const jsonData = JSON.parse(data);
+
+    const dto: JSONFormat = {
+      questions: jsonData.questions,
+    };
+
+    setQuizData(dto);
+  }, [navigate]);
+
+  useEffect(() => {
     const quizData = sessionStorage.getItem("quizData");
+
     if (!quizData) navigate("/upload-file");
   }, [navigate]);
 
@@ -21,8 +44,10 @@ function QuizPage() {
         <div className="text-orange-50 flex flex-col gap-8 h-full w-full px-6">
           {/* Header */}
           <ProgressBar
-            title={"Question 1/6"}
-            percentage={10}
+            title={`Question ${currentQuestionIndex + 1}/${
+              quizData.questions.length
+            }`}
+            percentage={quizProgressPercentage}
             description={
               <span className="text-sm text-orange-100/80">
                 <span>04:00</span> left
@@ -33,25 +58,30 @@ function QuizPage() {
           <div className="flex flex-col gap-4 select-none">
             <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md">
               <span className="border-2 font-semibold text-base border-orange-50 rounded-full px-2 flex items-center justify-center">
-                5
+                {currentQuestionIndex + 1}
               </span>
             </div>
             <div className="flex flex-col gap-0.5">
               <h1 className="font-bold text-base/relaxed">
-                What is the capital of France?
+                {quizData.questions[currentQuestionIndex].title}
               </h1>
               <span className="font-medium text-sm text-orange-100/80">
-                5. Paris
+                {currentQuestionIndex + 1}.{" "}
+                {quizData.questions[currentQuestionIndex].topic}
               </span>
             </div>
           </div>
           {/* Alternatives */}
           <div className="grid grid-cols-1 gap-4">
-            <Alternative content="Alternative 01" id={1} />
-            <Alternative content="Alternative 02" id={2} />
-            <Alternative content="Alternative 03" id={3} />
-            <Alternative content="Alternative 04" id={4} />
-            <Alternative content="Alternative 05" id={5} />
+            {quizData.questions[currentQuestionIndex].alternatives.map(
+              (alternative, index) => (
+                <Alternative
+                  content={alternative.text}
+                  id={index}
+                  key={index}
+                />
+              )
+            )}
           </div>
           {/* Question controls */}
           <div className="flex justify-between select-none">
