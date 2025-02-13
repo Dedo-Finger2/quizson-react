@@ -1,6 +1,20 @@
 import { FaFileImport } from "react-icons/fa6";
+import { readJsonFile } from "../../api/functions/read-json-file";
+import { useNavigate } from "react-router";
 
 function UploadFileSection() {
+  const navigate = useNavigate();
+
+  async function handleUploadFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files ? e.target.files[0] : null;
+
+    const data = await readJsonFile(file);
+
+    sessionStorage.setItem("quizData", JSON.stringify(data));
+
+    navigate("/quiz");
+  }
+
   return (
     <div className="flex flex-col gap-4 border border-orange-400 bg-orange-400/5 p-6 rounded-2xl">
       <div className="flex flex-col items-center gap-6">
@@ -15,7 +29,13 @@ function UploadFileSection() {
         </p>
       </div>
       <label>
-        <input type="file" className="z-10" accept=".json" hidden />
+        <input
+          type="file"
+          className="z-10"
+          accept=".json"
+          onChange={async (e) => handleUploadFile(e)}
+          hidden
+        />
         <div className="shadow-sm cursor-pointer bg-orange-400 hover:bg-orange-500 flex gap-2 items-center justify-center rounded-md py-1 font-semibold">
           Choose a file
         </div>
