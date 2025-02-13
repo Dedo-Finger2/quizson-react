@@ -21,16 +21,18 @@ function QuizPage() {
             }
           />
           {/* Question */}
-          <div className="flex gap-4 select-none">
-            <div className="p-4 bg-orange-300/20 rounded-xl flex items-center justify-center">
-              <span className="border-2 font-bold border-orange-50 rounded-full px-2 flex items-center justify-center">
+          <div className="flex flex-col gap-4 select-none">
+            <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md">
+              <span className="border-2 font-semibold text-base border-orange-50 rounded-full px-2 flex items-center justify-center">
                 5
               </span>
             </div>
             <div className="flex flex-col gap-0.5">
-              <h1 className="font-bold text-xl">5. Paris</h1>
-              <span className="font-medium text-sm text-orange-100/80">
+              <h1 className="font-bold text-base/relaxed">
                 What is the capital of France?
+              </h1>
+              <span className="font-medium text-sm text-orange-100/80">
+                5. Paris
               </span>
             </div>
           </div>
