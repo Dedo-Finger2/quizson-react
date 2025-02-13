@@ -1,9 +1,10 @@
 type AlternativeProps = {
   id: number;
   content: string;
+  onChange: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function Alternative({ content, id }: AlternativeProps) {
+function Alternative({ content, id, onChange }: AlternativeProps) {
   return (
     <label
       htmlFor={`user-answer-${id}`}
@@ -18,6 +19,8 @@ function Alternative({ content, id }: AlternativeProps) {
                relative outline-orange-400"
         type="radio"
         name="userAnswer"
+        value={id}
+        onChange={(e) => onChange(Number(e.target.value))}
         id={`user-answer-${id}`}
       />
       <span className="font-semibold w-full select-none text-sm/relaxed">

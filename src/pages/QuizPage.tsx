@@ -17,6 +17,7 @@ function QuizPage() {
   const [quizData, setQuizData] = useState<JSONFormat>({ questions: [] });
   const [quizProgressPercentage, setQuizProgressPercentage] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [userAnswer, setUserAnswer] = useState<number>(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer>();
 
   function handleNextQuestion() {
@@ -99,6 +100,7 @@ function QuizPage() {
               ? quizData.questions[currentQuestionIndex].alternatives.map(
                   (alternative, index) => (
                     <Alternative
+                      onChange={setUserAnswer}
                       content={alternative.text}
                       id={index}
                       key={index}
