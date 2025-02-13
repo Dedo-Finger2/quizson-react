@@ -4,6 +4,7 @@ import ProgressBar from "../components/Quiz/ProgressBar";
 
 import { FaCheck, FaXmark } from "react-icons/fa6";
 import { TbConfetti } from "react-icons/tb";
+import { RiLoopLeftFill } from "react-icons/ri";
 
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
@@ -98,6 +99,13 @@ function ResultPage() {
               description={`${progressBarPercentage}%`}
             />
           </div>
+          <button
+            onClick={() => navigate("/quiz")}
+            className="bg-orange-400 hover:bg-orange-500 cursor-pointer p-1 rounded-lg font-semibold flex gap-2 items-center justify-center"
+          >
+            <RiLoopLeftFill size={20} />
+            Do it again
+          </button>
           {/* Questions results */}
           <div className="grid grid-cols-1 gap-8">
             {userAnswers.current
