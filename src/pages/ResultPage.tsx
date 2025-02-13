@@ -32,10 +32,10 @@ function ResultPage() {
         recycle={false}
         numberOfPieces={400}
       />
-      <div className="text-orange-50 flex flex-col gap-16 items-center mt-16">
+      <div className="text-orange-50 flex flex-col w-full">
         {/* Header */}
-        <div className="flex flex-col gap-4 items-center">
-          <div className="flex gap-6 font-bold text-3xl">
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-6 font-bold text-2xl">
             <TbConfetti size={36} style={{ transform: "scaleX(-1)" }} />
             <h1>
               You got <span>10</span> of <span>10</span> right!
@@ -46,9 +46,9 @@ function ResultPage() {
             Lorem ipsum dolor sit amet consectetur.
           </span>
         </div>
-        <div className="flex flex-col gap-12 items-center">
+        <div className="flex flex-col gap-12">
           {/* Question bar */}
-          <div className="w-200">
+          <div className="w-full">
             <ProgressBar
               title={"07/10 Questions"}
               percentage={70}
@@ -56,7 +56,7 @@ function ResultPage() {
             />
           </div>
           {/* Questions results */}
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid grid-cols-1">
             <Card
               icon={<FaCheck size={20} />}
               title={"1. What is 2 + 2?"}
