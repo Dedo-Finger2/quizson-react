@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className="w-full items-center text-orange-100/70 flex flex-col gap-8">
       <span className="text-sm">A. Neto - antonioimportant@gmail.com</span>
-      <div className="grid grid-cols-2 text-center gap-8">
+      <div className="grid grid-cols-2 text-center gap-8 sm:flex">
         <span>
           <Link to="/">Home</Link>
         </span>

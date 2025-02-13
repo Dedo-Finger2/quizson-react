@@ -8,11 +8,11 @@ function Features() {
   return (
     <div className="text-white flex flex-col gap-6 w-full">
       <div className="flex flex-col gap-6">
-        <h1 className="text-2xl font-bold" id="Features">
+        <h1 className="text-2xl font-bold sm:text-3xl" id="Features">
           Features
         </h1>
       </div>
-      <div className="grid grid-cols-1 gap-6 w-full">
+      <div className="grid grid-cols-1 gap-6 w-full sm:grid-cols-2">
         <FeatureCard
           title="Import from JSON"
           description="Import quizzes using our supported JSON format"

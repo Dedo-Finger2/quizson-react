@@ -53,7 +53,7 @@ function JSONFormat() {
       <h1 className="text-orange-50 font-bold text-2xl" id="JSONFormat">
         JSON Format
       </h1>
-      <div className="flex flex-col gap-12 text-orange-50">
+      <div className="flex flex-col gap-12 text-orange-50 sm:flex-row">
         {/* Code Image */}
         <div className="flex flex-col gap-2">
           <div className="bg-orange-400/10 border border-orange-400 p-4 flex items-center justify-center rounded-xl">
