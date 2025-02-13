@@ -19,7 +19,18 @@ function QuizPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<UserAnswer>();
 
+  function handleNextQuestion() {
+    const newPercentage =
+      ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
+
+    setQuizProgressPercentage(newPercentage);
+
+    setCurrentQuestionIndex((prev) => (prev += 1));
+  }
+
   const navigate = useNavigate();
+
+  useEffect(() => {}, [currentQuestionIndex]);
 
   useEffect(() => {
     const data = sessionStorage.getItem("quizData");
@@ -102,7 +113,10 @@ function QuizPage() {
               <FaArrowLeft />
               Previous
             </button>
-            <button className="flex flex-row gap-2 items-center bg-orange-400 py-1.5 px-6 rounded-sm hover:bg-orange-500 hover:cursor-pointer font-semibold text-base">
+            <button
+              onClick={handleNextQuestion}
+              className="flex flex-row gap-2 items-center bg-orange-400 py-1.5 px-6 rounded-sm hover:bg-orange-500 hover:cursor-pointer font-semibold text-base"
+            >
               Next
               <FaArrowRight />
             </button>
