@@ -86,7 +86,7 @@ function QuizPage() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-col mt-12 pb-12">
+      <div className="flex flex-col mt-12 pb-12 sm:px-12">
         <div className="text-orange-50 flex flex-col gap-8 h-full w-full px-6">
           {/* Header */}
           <ProgressBar
