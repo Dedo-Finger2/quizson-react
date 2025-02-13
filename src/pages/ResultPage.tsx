@@ -32,17 +32,17 @@ function ResultPage() {
         recycle={false}
         numberOfPieces={400}
       />
-      <div className="text-orange-50 flex flex-col w-full">
+      <div className="text-orange-50 flex flex-col w-full px-6 mt-12 gap-12 pb-12">
         {/* Header */}
         <div className="flex flex-col gap-4">
-          <div className="flex gap-6 font-bold text-2xl">
-            <TbConfetti size={36} style={{ transform: "scaleX(-1)" }} />
+          <div className="flex gap-6 font-bold text-xl text-center">
+            <TbConfetti size={26} style={{ transform: "scaleX(-1)" }} />
             <h1>
               You got <span>10</span> of <span>10</span> right!
             </h1>
-            <TbConfetti id="rewardId" size={36} />
+            <TbConfetti id="rewardId" size={26} />
           </div>
-          <span className="text-sm">
+          <span className="text-sm text-center text-orange-100/80">
             Lorem ipsum dolor sit amet consectetur.
           </span>
         </div>
@@ -56,7 +56,7 @@ function ResultPage() {
             />
           </div>
           {/* Questions results */}
-          <div className="grid grid-cols-1">
+          <div className="grid grid-cols-1 gap-8">
             <Card
               icon={<FaCheck size={20} />}
               title={"1. What is 2 + 2?"}
