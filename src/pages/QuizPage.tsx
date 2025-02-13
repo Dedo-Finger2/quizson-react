@@ -21,23 +21,23 @@ function QuizPage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
 
   function handleNextQuestion() {
+    const newAnswer: UserAnswer = {
+      questionId: currentQuestionIndex,
+      correctGuessIndex:
+        quizData.questions[currentQuestionIndex].correctAnswerIndex,
+      userGuessIndex: userAnswer,
+    };
+
+    const updatedUserAnswers = [...userAnswers, newAnswer];
+
+    setUserAnswers(updatedUserAnswers);
+
     if (currentQuestionIndex + 1 >= quizData.questions.length) {
-      sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
       navigate("/result");
     }
 
     const newPercentage =
       ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
-
-    setUserAnswers((prev) => [
-      ...prev,
-      {
-        questionId: currentQuestionIndex,
-        correctGuessIndex:
-          quizData.questions[currentQuestionIndex].correctAnswerIndex,
-        userGuessIndex: userAnswer,
-      },
-    ]);
 
     setQuizProgressPercentage(newPercentage);
 
@@ -45,6 +45,10 @@ function QuizPage() {
   }
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    sessionStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+  }, [userAnswers]);
 
   useEffect(() => {}, [currentQuestionIndex]);
 
