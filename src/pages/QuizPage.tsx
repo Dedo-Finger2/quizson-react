@@ -95,9 +95,8 @@ function QuizPage() {
             }`}
             percentage={quizProgressPercentage}
             description={
-              <span className="text-sm text-orange-100/80">
-                <span>04:00</span> left
-              </span>
+              // You can put a timer here
+              <span className="text-sm text-orange-100/80">Good luck!</span>
             }
           />
           {/* Question */}
