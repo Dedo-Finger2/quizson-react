@@ -75,10 +75,10 @@ function ResultPage() {
         recycle={false}
         numberOfPieces={400}
       />
-      <div className="text-orange-50 flex flex-col w-full px-6 mt-12 gap-12 pb-12">
+      <div className="text-orange-50 flex flex-col w-full px-6 mt-12 gap-12 pb-12 sm:px-20">
         {/* Header */}
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-6 font-bold text-xl text-center">
+        <div className="flex flex-col gap-4 items-center">
+          <div className="flex gap-6 font-bold text-xl text-center sm:text-2xl">
             <TbConfetti size={26} style={{ transform: "scaleX(-1)" }} />
             <h1>
               You got <span>{userCorrectGuesses}</span> of{" "}
