@@ -8,9 +8,12 @@ import { useNavigate } from "react-router";
 import { JSONFormat } from "../api/functions/read-json-file";
 
 type UserAnswer = {
-  questionId: number;
-  userGuessIndex: number;
-  correctGuessIndex: number;
+  questionNumber: number;
+  questionText: string;
+  userGuessNumber: number;
+  userGuessText: string;
+  correctGuessNumber: number;
+  correctGuessText: string;
 };
 
 function QuizPage() {
@@ -21,11 +24,16 @@ function QuizPage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
 
   function handleNextQuestion() {
+    const currentQuestion = quizData.questions[currentQuestionIndex];
+
     const newAnswer: UserAnswer = {
-      questionId: currentQuestionIndex,
-      correctGuessIndex:
-        quizData.questions[currentQuestionIndex].correctAnswerIndex,
-      userGuessIndex: userAnswer,
+      questionNumber: currentQuestionIndex + 1,
+      correctGuessNumber: currentQuestion.correctAnswerIndex + 1,
+      userGuessNumber: userAnswer + 1,
+      questionText: currentQuestion.title,
+      correctGuessText:
+        currentQuestion.alternatives[currentQuestion.correctAnswerIndex].text,
+      userGuessText: currentQuestion.alternatives[userAnswer].text,
     };
 
     const updatedUserAnswers = [...userAnswers, newAnswer];
