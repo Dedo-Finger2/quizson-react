@@ -9,11 +9,11 @@ type Question = {
   alternatives: Alternative[];
 };
 
-type JSONFormat = {
+export type JSONFormat = {
   questions: Question[];
 };
 
-function readJsonFile(file: File | null): Promise<JSONFormat> {
+export function readJsonFile(file: File | null): Promise<JSONFormat> {
   return new Promise((resolve, reject) => {
     if (!file) return reject(new Error("no file provided"));
 
@@ -37,5 +37,3 @@ function readJsonFile(file: File | null): Promise<JSONFormat> {
     reader.readAsText(file);
   });
 }
-
-export default readJsonFile;
