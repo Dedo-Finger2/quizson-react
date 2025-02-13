@@ -21,6 +21,9 @@ function QuizPage() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
 
   function handleNextQuestion() {
+    if (currentQuestionIndex + 1 >= quizData.questions.length)
+      navigate("/result");
+
     const newPercentage =
       ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
 
