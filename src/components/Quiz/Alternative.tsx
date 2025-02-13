@@ -20,7 +20,9 @@ function Alternative({ content, id }: AlternativeProps) {
         name="userAnswer"
         id={`user-answer-${id}`}
       />
-      <span className="font-semibold w-full select-none">{content}</span>
+      <span className="font-semibold w-full select-none text-sm/relaxed">
+        {content}
+      </span>
     </label>
   );
 }
