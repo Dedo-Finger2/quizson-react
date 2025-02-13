@@ -18,11 +18,21 @@ function QuizPage() {
   const [quizProgressPercentage, setQuizProgressPercentage] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState<number>(0);
-  const [userAnswers, setUserAnswers] = useState<UserAnswer>();
+  const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
 
   function handleNextQuestion() {
     const newPercentage =
       ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
+
+    setUserAnswers((prev) => [
+      ...prev,
+      {
+        questionId: currentQuestionIndex,
+        correctGuessIndex:
+          quizData.questions[currentQuestionIndex].correctAnswerIndex,
+        userGuessIndex: userAnswer,
+      },
+    ]);
 
     setQuizProgressPercentage(newPercentage);
 
