@@ -3,8 +3,17 @@ import Alternative from "../components/Quiz/Alternative";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import ProgressBar from "../components/Quiz/ProgressBar";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 function QuizPage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const quizData = sessionStorage.getItem("quizData");
+    if (!quizData) navigate("/upload-file");
+  }, [navigate]);
+
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
