@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="text-white flex flex-col gap-12 w-full sm:flex-row">
       <img
-        className="size-80 w-full h-auto rounded-2xl shadow-lg sm:size-60 md:size-80"
+        className="size-80 w-full h-auto rounded-2xl shadow-lg sm:size-60 md:size-80 lg:size-90"
         src={svg}
         alt="girl-looking-to-giant-question-mark"
       />
@@ -14,7 +14,7 @@ function About() {
         <h1 className="text-2xl font-bold md:text-3xl" id="About">
           About
         </h1>
-        <span className="text-sm md:text-base">
+        <span className="text-sm md:text-base lg:text-lg">
           Quizson is designed to be both flexible and powerful, making it easy
           for you to engage with quizzes and enhance your learning. Start
           quizzing yourself today and take the first step toward improving your
@@ -22,7 +22,7 @@ function About() {
         </span>
         <Button
           content={"Contact Me"}
-          size={"default"}
+          size={"big"}
           textColor={"text-orange-900"}
           bgColor={"bg-orange-400"}
           bgColorHover={"hover:bg-orange-500"}

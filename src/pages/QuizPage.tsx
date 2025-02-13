@@ -87,7 +87,7 @@ function QuizPage() {
     <div className="h-screen flex flex-col">
       <Navbar />
       <div className="flex flex-col mt-12 pb-12 sm:px-12 md:px-24">
-        <div className="text-orange-50 flex flex-col gap-8 h-full w-full px-6">
+        <div className="text-orange-50 flex flex-col gap-8 h-full w-full px-6 lg:justify-center">
           {/* Header */}
           <ProgressBar
             title={`Question ${currentQuestionIndex + 1}/${
@@ -96,23 +96,25 @@ function QuizPage() {
             percentage={quizProgressPercentage}
             description={
               // You can put a timer here
-              <span className="text-sm text-orange-100/80">Good luck!</span>
+              <span className="text-sm text-orange-100/80 lg:text-base">
+                Good luck!
+              </span>
             }
           />
           {/* Question */}
-          <div className="flex flex-col gap-4 select-none">
-            <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md">
-              <span className="border-2 font-semibold text-base border-orange-50 rounded-full px-2 flex items-center justify-center">
+          <div className="flex flex-col gap-4 select-none lg:flex-row">
+            <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md lg:py-4 lg:px-3">
+              <span className="border-2 font-semibold text-base border-orange-50 rounded-full px-2 flex items-center justify-center lg:border-none lg:text-xl">
                 {currentQuestionIndex + 1}
               </span>
             </div>
             <div className="flex flex-col gap-0.5">
-              <h1 className="font-bold text-base/relaxed">
+              <h1 className="font-bold text-base/relaxed lg:text-lg/relaxed">
                 {quizData.questions[currentQuestionIndex]
                   ? quizData.questions[currentQuestionIndex].title
                   : "Loading..."}
               </h1>
-              <span className="font-medium text-sm text-orange-100/80">
+              <span className="font-medium text-sm text-orange-100/80 lg:text-base">
                 {currentQuestionIndex + 1}.{" "}
                 {quizData.questions[currentQuestionIndex]
                   ? quizData.questions[currentQuestionIndex].topic

@@ -19,12 +19,12 @@ function UploadFileSection() {
     <div className="flex flex-col gap-4 border border-orange-400 bg-orange-400/5 p-6 rounded-2xl">
       <div className="flex flex-col items-center gap-6">
         <div className="flex flex-col items-center gap-4">
-          <FaFileImport className="text-orange-100" size={32} />
-          <span className="text-sm text-neutral-400">
+          <FaFileImport className="text-orange-100 lg:size-12" size={32} />
+          <span className="text-sm text-neutral-400 lg:text-base">
             Only JSON files are supported!
           </span>
         </div>
-        <p className="font-semibold font-xl text-orange-100">
+        <p className="font-semibold text-base text-orange-100 lg:text-xl">
           Upload your file
         </p>
       </div>
@@ -36,7 +36,7 @@ function UploadFileSection() {
           onChange={async (e) => handleUploadFile(e)}
           hidden
         />
-        <div className="shadow-sm cursor-pointer bg-orange-400 hover:bg-orange-500 flex gap-2 items-center justify-center rounded-md py-1 font-semibold">
+        <div className="shadow-sm cursor-pointer bg-orange-400 hover:bg-orange-500 flex gap-2 items-center justify-center rounded-md py-1 font-semibold lg:text-xl">
           Choose a file
         </div>
       </label>

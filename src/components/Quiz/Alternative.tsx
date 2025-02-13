@@ -23,7 +23,7 @@ function Alternative({ content, id, onChange }: AlternativeProps) {
         onChange={(e) => onChange(Number(e.target.value))}
         id={`user-answer-${id}`}
       />
-      <span className="font-semibold w-full select-none text-sm/relaxed">
+      <span className="font-semibold w-full select-none text-sm/relaxed lg:text-base/relaxed">
         {content}
       </span>
     </label>
