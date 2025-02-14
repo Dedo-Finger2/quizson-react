@@ -105,13 +105,13 @@ function ResultPage() {
           </div>
           <button
             onClick={() => navigate("/quiz")}
-            className="bg-orange-400 hover:bg-orange-500 cursor-pointer p-1 rounded-lg font-semibold flex gap-2 items-center justify-center lg:text-2xl xl:w-60"
+            className="bg-orange-400 hover:bg-orange-500 cursor-pointer p-1 rounded-lg font-semibold flex gap-2 items-center justify-center lg:text-2xl"
           >
             <RiLoopLeftFill size={20} />
             Do it again
           </button>
           {/* Questions results */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 xl:grid-cols-3">
             {userAnswers.current
               ? userAnswers.current.map((answer, index) => (
                   <Card
