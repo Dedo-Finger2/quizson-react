@@ -103,7 +103,7 @@ function QuizPage() {
           />
           {/* Question */}
           <div className="flex flex-col gap-4 select-none lg:flex-row">
-            <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md lg:py-4 lg:px-3">
+            <div className="py-2 px-3 bg-orange-300/20 rounded-xl flex items-center justify-center shadow-md lg:py-4 lg:px-3 xl:px-4">
               <span className="border-2 font-semibold text-base border-orange-50 rounded-full px-2 flex items-center justify-center lg:border-none lg:text-xl">
                 {currentQuestionIndex + 1}
               </span>
@@ -123,7 +123,7 @@ function QuizPage() {
             </div>
           </div>
           {/* Alternatives */}
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
             {quizData.questions[currentQuestionIndex]
               ? quizData.questions[currentQuestionIndex].alternatives.map(
                   (alternative, index) => (

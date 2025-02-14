@@ -10,8 +10,8 @@ type CardProps = {
 
 function Card({ icon, title, userAnswer, correctAnswer }: CardProps) {
   return (
-    <div className="flex flex-col gap-4 select-none items-start border-b border-b-orange-400/40 pb-6 lg:border-none">
-      <div className="p-4 bg-orange-300/20 rounded-xl flex items-center justify-center w-full">
+    <div className="flex flex-col gap-4 select-none items-start border-b border-b-orange-400/40 pb-6 lg:border-none xl:flex-row">
+      <div className="p-4 bg-orange-300/20 rounded-xl flex items-center justify-center w-full xl:w-max">
         {icon}
       </div>
       <div className="flex flex-col gap-4 w-full">

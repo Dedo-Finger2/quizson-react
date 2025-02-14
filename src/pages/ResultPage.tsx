@@ -105,7 +105,7 @@ function ResultPage() {
           </div>
           <button
             onClick={() => navigate("/quiz")}
-            className="bg-orange-400 hover:bg-orange-500 cursor-pointer p-1 rounded-lg font-semibold flex gap-2 items-center justify-center lg:text-2xl"
+            className="bg-orange-400 hover:bg-orange-500 cursor-pointer p-1 rounded-lg font-semibold flex gap-2 items-center justify-center lg:text-2xl xl:w-60"
           >
             <RiLoopLeftFill size={20} />
             Do it again

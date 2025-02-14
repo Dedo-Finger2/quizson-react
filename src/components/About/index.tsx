@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="text-white flex flex-col gap-12 w-full sm:flex-row">
       <img
-        className="size-80 w-full h-auto rounded-2xl shadow-lg sm:size-60 md:size-80 lg:size-90"
+        className="size-80 w-full h-auto rounded-2xl shadow-lg sm:size-60 md:size-80 lg:size-90 xl:size-115"
         src={svg}
         alt="girl-looking-to-giant-question-mark"
       />
